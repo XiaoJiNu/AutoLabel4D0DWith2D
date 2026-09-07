@@ -1,0 +1,9 @@
+{
+  "frame_id": "2023-09-09-17-19-59-151",
+  "status": "BLOCKED_INFER",
+  "num_points": 89955,
+  "num_objects": 0,
+  "bev_png": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_repr_lidar/bev_2023-09-09-17-19-59-151.png",
+  "json": "/data/data/automomous/autolabel4d/pseudo_labels/rs_repr_lidar/rs_repr_lidar_2023-09-09-17-19-59-151.json",
+  "lidar_path": "/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64/2023-09-09-17-19-59-151.bin"
+}

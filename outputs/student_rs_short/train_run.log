@@ -1,0 +1,24 @@
+[rs_short] start 2026-09-06 14:42:57 UTC+08:00
+[rs_short] hs64=/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64
+[rs_short] pseudo=/data/data/automomous/autolabel4d/pseudo_labels/rs_lidar_only_export alt=/data/data/automomous/autolabel4d/pseudo_labels/rs_repr_lidar_thr03
+[rs_short] score_thresh=0.3 max_steps=50
+[rs_short] nvidia-smi:
+0, NVIDIA GeForce RTX 5090 Laptop GPU, 15 MiB, 24463 MiB, 0 %
+[rs_short] paired frames with labels: 5
+  - 2023-09-07-11-22-49-051 n_obj=34 label=2023-09-07-11-22-49-051.json
+  - 2023-09-08-10-13-45-949 n_obj=3 label=2023-09-08-10-13-45-949.json
+  - 2023-09-08-16-09-46-950 n_obj=41 label=2023-09-08-16-09-46-950.json
+  - 2023-09-08-17-25-56-850 n_obj=28 label=2023-09-08-17-25-56-850.json
+  - 2023-09-09-17-19-59-151 n_obj=37 label=2023-09-09-17-19-59-151.json
+[rs_short] trying OpenPCDet PointPillars …
+/data/code/cv/AutoLabel/BEV-OD/HEDNet-gpt/pcdet/utils/loss_utils.py:155: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @torch.cuda.amp.custom_fwd(cast_inputs=torch.float16)
+/data/software/conda/anaconda3/envs/hednet-gpu/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/TensorShape.cpp:4215.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[openpcdet] step=1/50 loss=1.5389 token=2023-09-07-11-22-49-051 vram_mb=309
+[openpcdet] step=10/50 loss=1.5545 token=2023-09-09-17-19-59-151 vram_mb=308
+[openpcdet] step=20/50 loss=1.4543 token=2023-09-09-17-19-59-151 vram_mb=308
+[openpcdet] step=30/50 loss=1.2771 token=2023-09-09-17-19-59-151 vram_mb=309
+[openpcdet] step=40/50 loss=1.2906 token=2023-09-09-17-19-59-151 vram_mb=310
+[openpcdet] step=50/50 loss=1.2710 token=2023-09-09-17-19-59-151 vram_mb=308
+[rs_short] TRAINED_SHORT backend=openpcdet_pointpillar_multihead steps=50 ckpt=/data/data/automomous/autolabel4d/checkpoints/student/pointpillars_rs_short.pth

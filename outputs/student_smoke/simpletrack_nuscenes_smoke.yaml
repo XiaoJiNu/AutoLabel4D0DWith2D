@@ -1,0 +1,8 @@
+# Placeholder SimpleTrack config path record (Stage F stub).
+# Upstream: https://github.com/tusen-ai/SimpleTrack
+# Do not run full tracking from this smoke.
+tracker: simpletrack
+dataset: nuscenes_style
+is_stub: true
+notes: >
+  Replace with a real SimpleTrack YAML when third_party is vendored.

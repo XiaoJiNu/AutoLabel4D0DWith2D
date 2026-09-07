@@ -1,0 +1,9 @@
+{
+  "written": [
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_align_proj/proj_00_2023-09-07-11-24-38-051_CAM_FRONT.jpg",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_align_proj/proj_01_2023-09-07-11-35-30-049_CAM_FRONT.jpg",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_align_proj/proj_02_2023-09-07-17-36-01-549_CAM_FRONT.jpg",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_align_proj/proj_03_2023-09-07-17-49-21-550_CAM_FRONT.jpg"
+  ],
+  "log": "/data/data/automomous/autolabel4d/logs/rs_align_proj.log"
+}

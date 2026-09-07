@@ -1,0 +1,60 @@
+{
+  "stage": "F",
+  "stage_id": "P6_student_pointpillars",
+  "dry_run": true,
+  "one_iter": true,
+  "config": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/configs/student_pointpillar_v3.yaml",
+  "student": "pointpillar_multihead",
+  "tracker": "simpletrack",
+  "coarse_classes": [
+    "vehicle",
+    "pedestrian",
+    "cyclist"
+  ],
+  "microbatch": 1,
+  "grad_accum_note": "Use gradient accumulation to emulate larger batch on 24GB; freeze backbone + BN for first short train (F2/F3).",
+  "freeze_backbone": true,
+  "openpcdet_paths_found": [
+    "/data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet",
+    "/data/code/location/pointFuse/output/vendor/OpenPCDet-8cacccec11db6f59bf6934600c9a175dae254806"
+  ],
+  "openpcdet_train_now": false,
+  "pseudo_summary": {
+    "pseudo_root": "/data/data/automomous/autolabel4d/pseudo_labels/fusion_export_smoke",
+    "n_valid": 2,
+    "n_files": 2,
+    "sample_tokens": [
+      "3950bd41f74548429c0f7700ff3d8269",
+      "3e8750f331d7499e9b5123e9eb70f2e2"
+    ]
+  },
+  "tracker_config_path": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_smoke/simpletrack_nuscenes_smoke.yaml",
+  "warnings": [
+    "Do not download huge OpenPCDet pretrained weights in this smoke.",
+    "Do not start long GPU training; --one-iter max 1 fake Linear step."
+  ],
+  "extra": {
+    "tracker_record": {
+      "hook": "simpletrack_hook_stub",
+      "tracker": "simpletrack",
+      "config_path": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_smoke/simpletrack_nuscenes_smoke.yaml",
+      "config_exists": true,
+      "repo_reference": "https://github.com/tusen-ai/SimpleTrack",
+      "notes": "DetZero and related AutoLabel pipelines commonly wrap tusen-ai/SimpleTrack as a fixed tracker for comparing pseudo-label quality. Exact DetZero commit is environment-specific; pin when third_party/SimpleTrack is added.",
+      "ran_full_track": false,
+      "is_stub": true
+    },
+    "one_iter_result": {
+      "loss": 1.6536809206008911,
+      "n": 2,
+      "device": "cuda",
+      "is_fake": true,
+      "notes": "FakeStudent 1-step only; not OpenPCDet PointPillars.",
+      "elapsed_sec": 0.9378
+    },
+    "nvidia_smi_before": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 18 MiB, 24463 MiB, 9 %",
+    "nvidia_smi_after": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 369 MiB, 24463 MiB, 0 %",
+    "config_microbatch": 1,
+    "freeze_backbone": true
+  }
+}

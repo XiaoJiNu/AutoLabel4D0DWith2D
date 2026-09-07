@@ -1,0 +1,56 @@
+{
+  "artifact_kind": "rs_repr_lidar_smoke",
+  "generated_at_cst": "2026-09-06T14:33:08.866343+08:00",
+  "is_rs_partial": true,
+  "partial_subset": true,
+  "repo": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D",
+  "hs64_dir": "/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64",
+  "picked": [
+    "/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64/2023-09-07-11-22-49-051.bin",
+    "/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64/2023-09-07-11-22-59-051.bin",
+    "/data/data/automomous/robosense/subset/lidar_occ_trainval/processed_data_20230906/SWEEPER-001/hs64/2023-09-07-11-23-19-050.bin"
+  ],
+  "image_alignment": {
+    "lidar_stem": "2023-09-07-11-22-49-051",
+    "n_images_cam0": 4745,
+    "image_first": "2023-09-28-09-53-43-041.jpg",
+    "image_last": "2023-10-08-17-39-19-613.jpg",
+    "time_aligned": false,
+    "reason": "PARTIAL part_01: hs64 dates ~2023-09-07..09 vs images ~2023-09-28..10-08; no timestamp-matched neighbors in this extract."
+  },
+  "mode": "real_inference",
+  "elapsed_s": 8.833545446395874,
+  "smi_before": "NVIDIA GeForce RTX 5090 Laptop GPU, 15 MiB, 24463 MiB, 0 %",
+  "smi_after": "NVIDIA GeForce RTX 5090 Laptop GPU, 1163 MiB, 24463 MiB, 30 %",
+  "pcdet_msg": "LidarCenterPointTeacher (hednet-gpu + runtime site-packages)",
+  "frames": [
+    {
+      "token": "2023-09-07-11-22-49-051",
+      "n_points": 98969,
+      "n_boxes": 0,
+      "json": "/data/data/automomous/autolabel4d/pseudo_labels/rs_repr_lidar/lidar_centerpoint_2023-09-07-11-22-49-051.json",
+      "bev": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_repr_lidar/bev_2023-09-07-11-22-49-051.png",
+      "vram_peak_mb": null,
+      "categories": []
+    },
+    {
+      "token": "2023-09-07-11-22-59-051",
+      "n_points": 99616,
+      "n_boxes": 0,
+      "json": "/data/data/automomous/autolabel4d/pseudo_labels/rs_repr_lidar/lidar_centerpoint_2023-09-07-11-22-59-051.json",
+      "bev": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_repr_lidar/bev_2023-09-07-11-22-59-051.png",
+      "vram_peak_mb": null,
+      "categories": []
+    },
+    {
+      "token": "2023-09-07-11-23-19-050",
+      "n_points": 99064,
+      "n_boxes": 0,
+      "json": "/data/data/automomous/autolabel4d/pseudo_labels/rs_repr_lidar/lidar_centerpoint_2023-09-07-11-23-19-050.json",
+      "bev": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/rs_repr_lidar/bev_2023-09-07-11-23-19-050.png",
+      "vram_peak_mb": null,
+      "categories": []
+    }
+  ],
+  "smi_final": "NVIDIA GeForce RTX 5090 Laptop GPU, 1237 MiB, 24463 MiB, 30 %"
+}

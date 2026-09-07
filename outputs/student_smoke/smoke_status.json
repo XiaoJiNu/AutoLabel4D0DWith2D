@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "stage": "F",
+  "plan": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_smoke/train_plan.json",
+  "n_valid_pseudo": 2,
+  "openpcdet_found": [
+    "/data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet",
+    "/data/code/location/pointFuse/output/vendor/OpenPCDet-8cacccec11db6f59bf6934600c9a175dae254806"
+  ],
+  "one_iter": {
+    "loss": 1.6536809206008911,
+    "n": 2,
+    "device": "cuda",
+    "is_fake": true,
+    "notes": "FakeStudent 1-step only; not OpenPCDet PointPillars.",
+    "elapsed_sec": 0.9378
+  }
+}

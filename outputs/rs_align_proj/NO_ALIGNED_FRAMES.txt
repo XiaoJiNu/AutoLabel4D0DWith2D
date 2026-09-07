@@ -1,0 +1,4 @@
+=== viz_rs_align_proj 2026-09-06 17:35:25 CST ===
+manifest n_aligned_frames=0
+SKIP projection: no aligned image-hs64 frames on disk.
+See rs_align_frames_v0 coverage.reasons / patch.lower_bound_gb=10.7374

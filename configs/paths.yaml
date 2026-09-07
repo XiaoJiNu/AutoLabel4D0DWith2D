@@ -1,0 +1,24 @@
+# 本机路径（v3 / 5090）
+code_root: /data/code/cv/AutoLabel/AutoLabel4D0DWith2D
+data_root: /data/data/automomous
+
+nuscenes_root: /data/data/automomous/nuscenes
+nuscenes_mini: /data/data/automomous/nuscenes/v1.0-mini
+
+robosense_raw: /data/data/automomous/robosense/raw
+robosense_subset: /data/data/automomous/robosense/subset
+robosense_cache: /data/data/automomous/robosense/cache
+
+manifests: /data/data/automomous/autolabel4d/manifests
+pseudo_labels: /data/data/automomous/autolabel4d/pseudo_labels
+checkpoints: /data/data/automomous/autolabel4d/checkpoints
+logs: /data/data/automomous/autolabel4d/logs
+
+# 磁盘硬上限（GB）——下载脚本应读取并强制
+budget_gb:
+  robosense_raw_max: 50
+  robosense_subset_max: 35
+  robosense_cache_max: 25
+  pseudo_labels_max: 10
+  checkpoints_max: 15
+  free_reserve_min: 20

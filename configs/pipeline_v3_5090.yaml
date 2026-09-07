@@ -1,0 +1,24 @@
+name: pipeline_v3_5090
+device: cuda:0
+vram_budget_gb: 24
+target_occupancy_gb: 21
+serial_teachers: true
+stages:
+  - id: P0_audit
+  - id: P1_geometry
+  - id: P2_lidar_teacher
+  - id: P3_dino
+  - id: P3b_sam
+  - id: P4_depth
+  - id: P5_fusion_track_export
+  - id: P6_student_pointpillars
+teachers:
+  lidar: openpcdet_compatible_single_sweep  # 实测选定具体 ckpt
+  dino: grounding_dino_tiny
+  sam: sam2.1_small
+  depth: omni_dc_v1_or_e3_lite
+student:
+  primary: pointpillar_multihead
+  tracker: simpletrack
+  optional_later: sparse4dv3_r50
+ablations: [E1, E2, E3]

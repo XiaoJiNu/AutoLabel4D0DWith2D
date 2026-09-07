@@ -1,0 +1,112 @@
+name: teacher_weights_v3
+stage: D
+probe_only: false
+download_weights: true
+checkpoints_root: /data/data/automomous/autolabel4d/checkpoints
+teachers:
+  lidar:
+    pipeline_id: openpcdet_compatible_single_sweep
+    status: partial
+    code_trees_found:
+    - path: /data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet
+      size_note: 3.4M code tree
+    - path: /data/code/location/pointFuse/output/vendor/OpenPCDet-8cacccec11db6f59bf6934600c9a175dae254806
+      size_note: 9.1M code tree (commit 8cacccec)
+    weights_found:
+    - role: centerpoint_nuscenes_candidate
+      path: /data/models/pointfuse/centerpoint/openpcdet-nuscenes-voxel0075-issue1704-reshare/cbgs_voxel0075_centerpoint_nds_6648.pth
+      size_bytes: 36003981
+      size_human: 34.34MB
+      note: community reshare; receipt marks download complete; rights/regression
+        NO-GO until verified
+      config_candidate: /data/code/location/pointFuse/output/vendor/OpenPCDet-8cacccec11db6f59bf6934600c9a175dae254806/tools/cfgs/nuscenes_models/cbgs_voxel0075_res3d_centerpoint.yaml
+    - role: openpcdet_pointpillar_kitti
+      path: /data/data/automomous/autolabel4d/checkpoints/lidar/pointpillars.kitti.openpcdet/model.safetensors
+      local_dir: /data/data/automomous/autolabel4d/checkpoints/lidar/pointpillars.kitti.openpcdet
+      size_bytes: 19376400
+      size_human: 18.48MB
+      repo_id: torch-pointcloud/pointpillars.kitti.openpcdet
+      hf_endpoint: https://hf-mirror.com
+      note: community HF OpenPCDet PointPillars KITTI; verify rights/regression before
+        production
+    missing: []
+  dino:
+    pipeline_id: grounding_dino_tiny
+    status: ready
+    code_trees_found: []
+    weights_found:
+    - role: grounding_dino_tiny
+      path: /data/data/automomous/autolabel4d/checkpoints/dino/grounding-dino-tiny/model.safetensors
+      local_dir: /data/data/automomous/autolabel4d/checkpoints/dino/grounding-dino-tiny
+      size_bytes: 689359096
+      size_human: 657.42MB
+      repo_id: IDEA-Research/grounding-dino-tiny
+      hf_endpoint: https://hf-mirror.com
+    missing: []
+  sam:
+    pipeline_id: sam2.1_small
+    status: ready
+    code_trees_found: []
+    weights_found:
+    - role: sam2_1_hiera_small
+      path: /data/data/automomous/autolabel4d/checkpoints/sam/sam2.1-hiera-small/sam2.1_hiera_small.pt
+      local_dir: /data/data/automomous/autolabel4d/checkpoints/sam/sam2.1-hiera-small
+      config_yaml: /data/data/automomous/autolabel4d/checkpoints/sam/sam2.1-hiera-small/sam2.1_hiera_s.yaml
+      size_bytes: 184416285
+      size_human: 175.87MB
+      repo_id: facebook/sam2.1-hiera-small
+      hf_endpoint: https://hf-mirror.com
+    note: no SAM3; Tiny fallback if VRAM tight
+    missing: []
+  depth:
+    pipeline_id: omni_dc_v1_or_e3_lite
+    status: partial
+    weights_found:
+    - role: e3_lite_depth_anything_v2_small
+      path: /data/code/cv/depth_estimation/Depth-Anything-V2/checkpoints/depth_anything_v2_vits.pth
+      size_bytes: 99218434
+      size_human: 95MB
+      code_tree: /data/code/cv/depth_estimation/Depth-Anything-V2
+    - role: e3_lite_depth_anything_v2_base_optional
+      path: /data/code/cv/depth_estimation/Depth-Anything-V2/checkpoints/depth_anything_v2_vitb.pth
+      size_bytes: 389961218
+      size_human: 372MB
+      note: larger than Small; prefer vits for 24GB serial teachers
+    missing:
+    - slot: omni_dc_v1
+      intended_hf_model_id: null
+      intended_repo: https://github.com/princeton-vl/OMNI-DC
+      intended_note: OMNI-DC v1.0 release checkpoint (confirm exact HF id when wiring
+        D4); may disable depth and keep E2
+      intended_local: /data/data/automomous/autolabel4d/checkpoints/depth/omni_dc/
+    - slot: depth_anything_v2_hf_mirror_optional
+      intended_hf_model_id: depth-anything/Depth-Anything-V2-Small
+      note: local .pth already found; HF id recorded for provenance only
+nearby_not_teachers:
+- path: /data/models/pointfuse/fshnet/say2l-fshnet-nuscenes-e36-8e8f23e/fshnet_nusc_e36.pth
+  size_human: 0.15GB
+  note: PointFuse FSHNet — not AutoLabel4D teacher
+- path: /data/models/pointfuse/mapmos/mapmos-prbonn-20230731.ckpt
+  size_human: 7.11MB
+  note: MapMOS — not AutoLabel4D teacher
+searched_roots:
+- /data/code
+- /data/data/automomous/autolabel4d/checkpoints
+- /data/models
+- /home/yr/.cache/huggingface
+- /home/yr/.cache/torch
+post_audit_plan:
+  checkpoint_budget_gb: 15
+  fetch_after_rs_audit:
+  - grounding_dino_tiny
+  - sam2_1_small
+  - pointpillars_pretrained
+  depth_policy: prefer_existing_depth_anything_v2
+  representative_frame_order:
+  - lidar_openpcdet_or_centerpoint
+  - grounding_dino
+  - sam
+  - depth_da_v2
+  missing_modality: skip_and_mark_in_report
+last_download_manifest: /data/data/automomous/autolabel4d/manifests/teacher_weights_download.json
+last_download_at_cst: '2026-09-06T14:39:59.590025+08:00'

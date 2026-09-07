@@ -1,0 +1,101 @@
+# AutoLabel4D pseudo-label schema (nuScenes-style + track_id + quality)
+# Stage A5 — required fields for write/read/validate smoke.
+# Updated 2026-09-06: category whitelist locked to nuScenes detection/tracking 10-class set.
+
+schema_version: "1.1"
+description: >
+  Per-sample JSON pseudo labels. Boxes are in the LiDAR / ego-local frame for
+  RoboSense exports (translation/size/rotation), matching CenterPoint teacher
+  output. track_id and quality are first-class fields.
+  Categories MUST be from the official nuScenes detection/tracking 10-class set
+  (same names used by OpenPCDet nuScenes CenterPoint CLASS_NAMES).
+
+# Official nuScenes detection / tracking class set (10 classes).
+# Product labels are restricted to this list only — map aliases or drop others.
+nuscenes_detection_classes: &nusc10
+  - car
+  - truck
+  - bus
+  - trailer
+  - construction_vehicle
+  - pedestrian
+  - motorcycle
+  - bicycle
+  - traffic_cone
+  - barrier
+
+categories:
+  allowed: *nusc10
+  # Free-text / coarse aliases → allowed class (or null = drop)
+  remap:
+    car: car
+    truck: truck
+    bus: bus
+    trailer: trailer
+    construction_vehicle: construction_vehicle
+    construction: construction_vehicle
+    pedestrian: pedestrian
+    person: pedestrian
+    motorcycle: motorcycle
+    motorbike: motorcycle
+    bicycle: bicycle
+    bike: bicycle
+    cyclist: bicycle
+    traffic_cone: traffic_cone
+    cone: traffic_cone
+    barrier: barrier
+    # Coarse student aliases — map into fine set when possible
+    vehicle: car
+  drop_unmapped: true
+  notes: >
+    Only the 10 nuScenes detection/tracking classes are kept in exported
+    pseudo labels and nuScenes-style results JSON. Non-listed labels are
+    remapped via `remap` or dropped when `drop_unmapped` is true.
+
+required_top_level:
+  - version
+  - sample_token
+  - scene_name
+  - timestamp
+  - lidar_sd_token
+  - objects
+  - meta
+
+object_fields:
+  track_id: {type: str, required: true}
+  category: {type: str, required: true, enum_ref: categories.allowed}
+  translation: {type: float3, required: true, note: "x,y,z in LiDAR/ego frame for RS (meters)"}
+  size: {type: float3, required: true, note: "width, length, height (meters) — nuScenes wlh"}
+  rotation: {type: float4, required: true, note: "quaternion wxyz"}
+  score: {type: float, required: true}
+  quality: {type: enum, values: [A, B, C], required: true}
+  valid_fields: {type: list[str], required: true}
+  ignore: {type: bool, required: true}
+  source: {type: str, required: true}
+
+meta_fields:
+  generator: {type: str, required: true}
+  is_fake: {type: bool, required: true}
+  notes: {type: str, required: true}
+
+example:
+  version: "1.1"
+  sample_token: "<sample token or RS stem>"
+  scene_name: "SWEEPER-001"
+  timestamp: 1694085878051000
+  lidar_sd_token: ""
+  objects:
+    - track_id: "rsf_000"
+      category: "car"
+      translation: [10.0, 2.0, 0.5]
+      size: [1.8, 4.5, 1.6]
+      rotation: [1.0, 0.0, 0.0, 0.0]
+      score: 0.9
+      quality: "B"
+      valid_fields: ["translation", "size", "rotation", "category"]
+      ignore: false
+      source: "lidar_centerpoint"
+  meta:
+    generator: "scripts/remap_nuscenes_classes_viz.py"
+    is_fake: false
+    notes: "nuScenes 10-class whitelist only."

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+*.bak
+*.bak.*
+.DS_Store
+# large artifacts stay under /data; keep light outputs only if already tracked
+*.pth
+*.pt
+*.onnx
+*.safetensors

@@ -1,0 +1,75 @@
+# Stage F — PointPillar-MultiHead short-train skeleton (5090 / 24GB)
+# Interface / dry config only. Do NOT download huge OpenPCDet weights here.
+name: student_pointpillar_v3
+stage: F
+stage_id: P6_student_pointpillars
+
+device: cuda:0
+vram_budget_gb: 24
+
+student:
+  primary: pointpillar_multihead
+  tracker: simpletrack
+  # Fine labels in pseudo data: nuScenes detection/tracking 10-class set
+  # (car,truck,bus,trailer,construction_vehicle,pedestrian,motorcycle,bicycle,traffic_cone,barrier)
+  # Student short-train may still collapse to 3 coarse heads for F2 smoke:
+  coarse_classes:
+    - vehicle
+    - pedestrian
+    - cyclist
+  fine_classes_nuscenes10:
+    - car
+    - truck
+    - bus
+    - trailer
+    - construction_vehicle
+    - pedestrian
+    - motorcycle
+    - bicycle
+    - traffic_cone
+    - barrier
+
+train:
+  microbatch: 1
+  # grad accum: emulate larger effective batch without blowing 24GB VRAM
+  grad_accum_steps: 8
+  grad_accum_note: >
+    microbatch=1 + gradient accumulation on 5090; increase accum only after
+    smoke passes. Do not raise microbatch until VRAM headroom is verified.
+  freeze_backbone: true
+  freeze_bn: true
+  freeze_backbone_note: >
+    F2/F3: freeze PointPillar backbone (+ BN) and train new MultiHead only
+    on quality A/B pseudo labels first.
+  max_epochs_short: 1
+  one_iter_smoke_only: true
+  allow_long_train: false
+
+data:
+  # Prefer fusion_export_smoke until RoboSense subset audit completes
+  pseudo_root: /data/data/automomous/autolabel4d/pseudo_labels/rs_fused_export_nuscenes  # was fusion_export_smoke; nuScenes-10 remapped
+  quality_keep: [A, B]
+  ignore_quality_c_for_train: true
+
+# OpenPCDet / PointPillars trees found on this machine (record only; no train yet)
+openpcdet:
+  train_now: false
+  download_weights: false
+  paths_found:
+    - /data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet
+    - /data/code/location/pointFuse/output/vendor/OpenPCDet-8cacccec11db6f59bf6934600c9a175dae254806
+  cuda_pointpillars: /data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars
+  reference_cfgs:
+    - /data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet/tools/cfgs/kitti_models/pointpillar.yaml
+    - /data/code/cv/BEV/Lidar_AI_Solution/CUDA-PointPillars/OpenPCDet/tools/cfgs/waymo_models/pointpillar_1x.yaml
+
+tracker:
+  name: simpletrack
+  repo_reference: https://github.com/tusen-ai/SimpleTrack
+  # Placeholder written by smoke under outputs/student_smoke/
+  config_path: null
+  run_full_track: false
+
+outputs:
+  smoke_dir: outputs/student_smoke
+  train_plan: outputs/student_smoke/train_plan.json

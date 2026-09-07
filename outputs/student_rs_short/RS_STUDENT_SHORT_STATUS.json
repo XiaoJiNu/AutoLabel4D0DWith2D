@@ -1,0 +1,214 @@
+{
+  "created_at": "2026-09-06 14:42:30 CST",
+  "status": "TRAINED_SHORT",
+  "quality_keep": [
+    "A",
+    "B"
+  ],
+  "n_samples": 4,
+  "infos_json": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_rs_short/rs_lidar_only_train_infos.json",
+  "infos_pkl": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_rs_short/rs_lidar_only_train_infos.pkl",
+  "train_list": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_rs_short/train_list.txt",
+  "samples_brief": [
+    {
+      "token": "2023-09-07-11-22-49-051",
+      "n_gt": 7,
+      "n_points": 107022,
+      "gt_names_set": [
+        "car",
+        "motorcycle",
+        "pedestrian"
+      ]
+    },
+    {
+      "token": "2023-09-08-16-09-46-950",
+      "n_gt": 11,
+      "n_points": 108337,
+      "gt_names_set": [
+        "bus",
+        "car",
+        "motorcycle",
+        "truck"
+      ]
+    },
+    {
+      "token": "2023-09-08-17-25-56-850",
+      "n_gt": 4,
+      "n_points": 106798,
+      "gt_names_set": [
+        "motorcycle",
+        "pedestrian",
+        "trailer"
+      ]
+    },
+    {
+      "token": "2023-09-09-17-19-59-151",
+      "n_gt": 1,
+      "n_points": 106928,
+      "gt_names_set": [
+        "car"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "token": "2023-09-07-11-22-59-051",
+      "reason": "no boxes after quality filter",
+      "qcounts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "other": 0
+      }
+    },
+    {
+      "token": "2023-09-07-11-23-19-050",
+      "reason": "no boxes after quality filter",
+      "qcounts": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "other": 0
+      }
+    },
+    {
+      "token": "2023-09-08-10-13-45-949",
+      "reason": "no boxes after quality filter",
+      "qcounts": {
+        "A": 0,
+        "B": 0,
+        "C": 3,
+        "other": 0
+      }
+    }
+  ],
+  "train": {
+    "ok": true,
+    "mode": "real_pointpillar_multihead",
+    "steps": 30,
+    "losses": [
+      11.055316925048828,
+      4.902085304260254,
+      4.21630859375,
+      9.545876502990723,
+      22.115840911865234,
+      5.221125602722168,
+      3.2761926651000977,
+      15.527678489685059,
+      9.93545150756836,
+      2.496774673461914,
+      2.2468855381011963,
+      5.103781223297119,
+      6.334550857543945,
+      2.406979560852051,
+      1.703140377998352,
+      6.3652496337890625,
+      4.874476432800293,
+      1.7290656566619873,
+      1.568636417388916,
+      5.324492931365967,
+      4.165327072143555,
+      1.4875705242156982,
+      1.209792137145996,
+      3.2798070907592773,
+      3.5701005458831787,
+      1.3035142421722412,
+      1.22243070602417,
+      3.325670003890991,
+      2.995818853378296,
+      1.1416927576065063
+    ],
+    "loss_first": 11.055316925048828,
+    "loss_last": 1.1416927576065063,
+    "ckpt": "/data/data/automomous/autolabel4d/checkpoints/student/pointpillar_multihead_rs_short.pth",
+    "elapsed_sec": 2.479,
+    "n_trainable": 1689196,
+    "n_params": 6078636,
+    "freeze_backbone": true,
+    "nvidia_smi_before": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 465 MiB, 24463 MiB, 0 %",
+    "nvidia_smi_peak": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 1319 MiB, 24463 MiB, 32 %",
+    "nvidia_smi_after": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 705 MiB, 24463 MiB, 32 %",
+    "step_logs_tail": [
+      {
+        "step": 25,
+        "idx": 1,
+        "token": "2023-09-08-16-09-46-950",
+        "loss": 1.3035142421722412,
+        "tb": {
+          "loss_rpn": 1.3035142421722412,
+          "rpn_loss_cls": 0.7302064299583435,
+          "rpn_loss_loc": 0.5733078420162201,
+          "rpn_loss": 1.3035142421722412
+        }
+      },
+      {
+        "step": 26,
+        "idx": 2,
+        "token": "2023-09-08-17-25-56-850",
+        "loss": 1.22243070602417,
+        "tb": {
+          "loss_rpn": 1.22243070602417,
+          "rpn_loss_cls": 0.7190499901771545,
+          "rpn_loss_loc": 0.5033807419240475,
+          "rpn_loss": 1.22243070602417
+        }
+      },
+      {
+        "step": 27,
+        "idx": 3,
+        "token": "2023-09-09-17-19-59-151",
+        "loss": 3.325670003890991,
+        "tb": {
+          "loss_rpn": 3.325670003890991,
+          "rpn_loss_cls": 0.46839699149131775,
+          "rpn_loss_loc": 2.8572731018066406,
+          "rpn_loss": 3.325670003890991
+        }
+      },
+      {
+        "step": 28,
+        "idx": 0,
+        "token": "2023-09-07-11-22-49-051",
+        "loss": 2.995818853378296,
+        "tb": {
+          "loss_rpn": 2.995818853378296,
+          "rpn_loss_cls": 0.45097583532333374,
+          "rpn_loss_loc": 2.5448431223630905,
+          "rpn_loss": 2.995818853378296
+        }
+      },
+      {
+        "step": 29,
+        "idx": 1,
+        "token": "2023-09-08-16-09-46-950",
+        "loss": 1.1416927576065063,
+        "tb": {
+          "loss_rpn": 1.1416927576065063,
+          "rpn_loss_cls": 0.704890251159668,
+          "rpn_loss_loc": 0.43680254369974136,
+          "rpn_loss": 1.1416927576065063
+        }
+      }
+    ],
+    "pretrained": null,
+    "pretrained_note": "official OpenPCDet PointPillars pretrained MISSING; trained from random init",
+    "nvidia_smi_final_idle": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 15 MiB, 24463 MiB, 2 %"
+  },
+  "fake_student": {
+    "loss": 1.4802484512329102,
+    "n": 8,
+    "device": "cuda",
+    "is_fake": true,
+    "notes": "FakeStudent 1-step only; not OpenPCDet PointPillars.",
+    "ok": true,
+    "mode": "fake_student",
+    "elapsed_sec": 0.821,
+    "n_valid_pseudo": 7,
+    "nvidia_smi_before": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 18 MiB, 24463 MiB, 0 %",
+    "nvidia_smi_after": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 413 MiB, 24463 MiB, 0 %"
+  },
+  "blockers": [
+    "Official OpenPCDet PointPillars pretrained .pth MISSING (teacher_weights_v3: openpcdet_pointpillar_pretrained). SHORT train uses random init + freeze backbone/head-train."
+  ],
+  "real_train_cmd": "# Documented real OpenPCDet PointPillar-MultiHead SHORT train (Legion / hednet-gpu)\n# Pretrained official PP weights are MISSING on this machine \u2014 this runs from-scratch SHORT.\nPY=/data/software/conda/anaconda3/envs/hednet-gpu/bin/python\ncd /data/code/cv/AutoLabel/AutoLabel4D0DWith2D\n$PY scripts/run_student_rs_short_train.py \\\n  --steps 30 --lr 1e-3 --freeze-backbone \\\n  --pseudo-root /data/data/automomous/autolabel4d/pseudo_labels/rs_lidar_only_export \\\n  --quality A,B \\\n  --cfg /data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_rs_short/pp_multihead_rs_short.yaml \\\n  --ckpt /data/data/automomous/autolabel4d/checkpoints/student/pointpillar_multihead_rs_short.pth\n# Infos pickle: /data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/student_rs_short/rs_lidar_only_train_infos.pkl\n# Env: hednet-gpu (torch+spconv+pcdet via HEDNet-gpt)\n# Do NOT start long full training; unload GPU after.\n"
+}

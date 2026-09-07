@@ -1,0 +1,16 @@
+# RoboSense 第一版传感器预设：四鱼眼 + 顶部 hs64
+preset_name: RS_4F_1L
+camera_channels:
+  - CAM_FRONT_OV
+  - CAM_LEFT_OV
+  - CAM_RIGHT_OV
+  - CAM_BACK_OV
+lidar_source: hs64
+lidar_channel: LIDAR_TOP
+# 禁止把 livox / velodyne_path 当顶部激光
+forbid_lidar_fields:
+  - livox
+  - velodyne_path
+annotation_split: global
+notes: >
+  实际路径与标定必须从元数据读取；annos.id 仅用于评价支路，不得进入生成器。

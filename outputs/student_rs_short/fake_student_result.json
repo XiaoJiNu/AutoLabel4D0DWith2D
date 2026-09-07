@@ -1,0 +1,13 @@
+{
+  "loss": 1.4802484512329102,
+  "n": 8,
+  "device": "cuda",
+  "is_fake": true,
+  "notes": "FakeStudent 1-step only; not OpenPCDet PointPillars.",
+  "ok": true,
+  "mode": "fake_student",
+  "elapsed_sec": 0.821,
+  "n_valid_pseudo": 7,
+  "nvidia_smi_before": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 18 MiB, 24463 MiB, 0 %",
+  "nvidia_smi_after": "0, NVIDIA GeForce RTX 5090 Laptop GPU, 413 MiB, 24463 MiB, 0 %"
+}

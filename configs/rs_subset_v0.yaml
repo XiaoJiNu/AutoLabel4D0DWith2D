@@ -1,0 +1,45 @@
+# RoboSense subset selection draft (Stage B dry-run / v0)
+# HF repo: suhaisheng0527/RoboSense
+# Layout: opaque ~10GB tar parts under dataset/ + split PKLs under splits/
+# Sequence-level IDs are NOT remote-listable; refine after PKL extract.
+
+name: rs_subset_v0
+hf_repo: suhaisheng0527/RoboSense
+target_media_gb: [30, 45]
+budget_reference: configs/paths.yaml  # robosense_subset_max=35, raw_max=50
+
+policy:
+  prefer_complete_sequences: true  # enforced post-extract; dry-run uses shards
+  prefer_smaller_trailing_parts: true
+  dev_sequences: 2
+  train_try_sequences: 3
+  holdout_check_sequences: 1
+  notes:
+    - "Dev: 2–3 sequences; train_try uses remaining budget after PKL parse."
+    - "Do not download full 705GB corpus."
+    - "Isolate official GT boxes/IDs from generator inputs (B4)."
+
+proposed_shards:
+  - splits/robosense_local_train.pkl
+  - splits/robosense_local_val.pkl
+  - dataset/image_trainval_part_01.tar.gz
+  - dataset/image_trainval_part_16.tar.gz
+  - dataset/lidar_occ_trainval_part_01.tar.gz
+  - dataset/lidar_occ_trainval_part_23.tar.gz
+  - dataset/image_test_part_12.tar.gz
+  - dataset/lidar_occ_test_part_18.tar.gz
+
+placeholder_sequences:
+  dev:
+    - PLACEHOLDER_dev_seq_01_from_local_val
+    - PLACEHOLDER_dev_seq_02_from_local_val
+  train_try:
+    - PLACEHOLDER_train_try_seq_01_from_local_train
+    - PLACEHOLDER_train_try_seq_02_from_local_train
+    - PLACEHOLDER_train_try_seq_03_from_local_train
+  holdout_check:
+    - PLACEHOLDER_check_seq_01_from_test_trailers
+
+inventory_cache:
+  - /home/yr/grok-bot-work/autolabel4d_stageB/hf_shard_inventory.json
+  - configs/robosense_hf_inventory.json

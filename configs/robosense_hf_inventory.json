@@ -1,0 +1,375 @@
+{
+  "repo": "suhaisheng0527/RoboSense",
+  "source": "https://huggingface.co/api/datasets/suhaisheng0527/RoboSense/tree/main",
+  "fetched_at": "2026-09-06T02:20:00Z",
+  "note": "HF layout is opaque at sequence level: media is split into ~10GB tar parts that must be cat'd before extract. Sequence IDs live inside PKLs after download.",
+  "files": [
+    {
+      "path": "dataset/image_test_part_01.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_02.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_03.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_04.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_05.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_06.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_07.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_08.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_09.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_10.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_11.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_test_part_12.tar.gz",
+      "size": 914354929,
+      "size_gb": 0.9144
+    },
+    {
+      "path": "dataset/image_trainval_part_01.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_02.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_03.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_04.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_05.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_06.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_07.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_08.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_09.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_10.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_11.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_12.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_13.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_14.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_15.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/image_trainval_part_16.tar.gz",
+      "size": 1568904180,
+      "size_gb": 1.5689
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_01.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_02.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_03.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_04.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_05.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_06.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_07.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_08.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_09.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_10.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_11.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_12.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_13.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_14.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_15.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_16.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_17.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_test_part_18.tar.gz",
+      "size": 787776744,
+      "size_gb": 0.7878
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_01.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_02.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_03.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_04.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_05.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_06.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_07.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_08.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_09.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_10.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_11.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_12.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_13.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_14.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_15.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_16.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_17.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_18.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_19.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_20.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_21.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_22.tar.gz",
+      "size": 10737418240,
+      "size_gb": 10.7374
+    },
+    {
+      "path": "dataset/lidar_occ_trainval_part_23.tar.gz",
+      "size": 3169280582,
+      "size_gb": 3.1693
+    },
+    {
+      "path": "splits/robosense_global_train.pkl",
+      "size": 465007568,
+      "size_gb": 0.465
+    },
+    {
+      "path": "splits/robosense_global_val.pkl",
+      "size": 95079057,
+      "size_gb": 0.0951
+    },
+    {
+      "path": "splits/robosense_local_train.pkl",
+      "size": 415024428,
+      "size_gb": 0.415
+    },
+    {
+      "path": "splits/robosense_local_val.pkl",
+      "size": 84333408,
+      "size_gb": 0.0843
+    }
+  ],
+  "total_bytes": 705431946496,
+  "total_gb": 705.432
+}

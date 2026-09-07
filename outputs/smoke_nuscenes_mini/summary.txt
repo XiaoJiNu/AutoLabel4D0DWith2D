@@ -1,0 +1,30 @@
+{
+  "dataroot": "/data/data/automomous/nuscenes/v1.0-mini",
+  "version": "v1.0-mini",
+  "scene": "scene-0103",
+  "max_samples": 8,
+  "out_pseudo": "/data/data/automomous/autolabel4d/pseudo_labels/smoke_nuscenes_mini",
+  "out_viz": "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini",
+  "status": "PASS",
+  "n_written": 8,
+  "n_validated": 8,
+  "viz_pngs": [
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/3e8750f331d7499e9b5123e9eb70f2e2_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/3e8750f331d7499e9b5123e9eb70f2e2_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/3950bd41f74548429c0f7700ff3d8269_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/3950bd41f74548429c0f7700ff3d8269_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/c5f58c19249d4137ae063b0e9ecd8b8e_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/c5f58c19249d4137ae063b0e9ecd8b8e_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/700c1a25559b4433be532de3475e58a9_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/700c1a25559b4433be532de3475e58a9_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/747aa46b9a4641fe90db05d97db2acea_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/747aa46b9a4641fe90db05d97db2acea_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/f4f86af4da3b49e79497deda5c5f223a_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/f4f86af4da3b49e79497deda5c5f223a_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/6832e717621341568c759151b5974512_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/6832e717621341568c759151b5974512_cam_front.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/c59e60042a8643e899008da2e446acca_bev.png",
+    "/data/code/cv/AutoLabel/AutoLabel4D0DWith2D/outputs/smoke_nuscenes_mini/c59e60042a8643e899008da2e446acca_cam_front.png"
+  ],
+  "errors": []
+}

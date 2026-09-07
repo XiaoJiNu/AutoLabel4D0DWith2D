@@ -5,8 +5,33 @@ __pycache__/
 *.bak
 *.bak.*
 .DS_Store
-# large artifacts stay under /data; keep light outputs only if already tracked
+
+# weights / model blobs
 *.pth
 *.pt
 *.onnx
 *.safetensors
+*.ckpt
+*.bin
+*.pkl
+*.pickle
+*.h5
+*.npy
+*.npz
+*.npz.gz
+
+# media / heavy viz (keep local, do not publish)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.avi
+*.mov
+*.pdf
+
+# optional local dumps
+outputs/**/*.png
+outputs/**/*.jpg
+outputs/**/*.jpeg
